@@ -1,8 +1,80 @@
+/* raleway-300 - latin */
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Raleway Light"), local("Raleway-Light"), url("../fonts/raleway-v14-latin-300.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v14-latin-300.woff") format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* raleway-regular - latin */
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Raleway"), local("Raleway-Regular"), url("../fonts/raleway-v14-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v14-latin-regular.woff") format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* raleway-600 - latin */
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Raleway SemiBold"), local("Raleway-SemiBold"), url("../fonts/raleway-v14-latin-600.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v14-latin-600.woff") format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* raleway-800 - latin */
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 800;
+    src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"), url("../fonts/raleway-v14-latin-800.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v14-latin-800.woff") format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* raleway-700 - latin */
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Raleway Bold"), local("Raleway-Bold"), url("../fonts/raleway-v14-latin-700.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("../fonts/raleway-v14-latin-700.woff") format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* montserrat-200 - latin */
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 200;
+    src: local("Montserrat ExtraLight"), local("Montserrat-ExtraLight"), url("../fonts/montserrat-v14-latin-200.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("../fonts/montserrat-v14-latin-200.woff") format("woff");
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html {
     font-family: "Raleway", sans-serif;
     color: white;
     font-size: 16px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 *,
@@ -13,6 +85,7 @@ html {
 
 body {
     max-width: 1920px;
+    margin: 0 auto;
 }
 
 .container {
@@ -22,24 +95,59 @@ body {
 }
 
 .header {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
     background: url(../img/Clip.jpg) no-repeat center;
     background-size: cover;
     padding: 40px 0;
     text-align: center;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo_txt {
+    color: white;
+    font-weight: 400;
+    font-size: 34;
+}
+
+.logo_icon {
+    fill: white;
+}
+
+.logo:hover .logo_icon {
+    fill: #c7b299;
+}
+
+.logo:hover .logo_txt {
+    color: #c7b299;
+}
+
+.logo:active .logo_icon {
+    fill: #c7b299;
+    opacity: 50%;
+}
+
+.logo:active .logo_txt {
+    color: #c7b299;
+    opacity: 50%;
+}
+
 .nav_bar {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .nav_list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .nav_link {
@@ -54,8 +162,41 @@ body {
     color: #c7b299;
 }
 
+.nav_link:hover {
+    color: #c7b299;
+    opacity: 50%;
+}
+
 .nav_item {
     margin-right: 28px;
+}
+
+.cart {
+    width: 18px;
+    height: 24px;
+    border: none;
+    outline: none;
+    background: url(../img/Cart.png) no-repeat center;
+    background-size: contain;
+    box-shadow: none;
+}
+
+input[type="search"] {
+    width: 24px;
+    height: 24px;
+    outline: none;
+    border: none;
+    background: url(../img/icon-search.png) no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+input[type="search"]:focus {
+    width: 250px;
+    border: 1px solid white;
+    color: white;
+    background-position: right;
+    transition: linear 0.3s;
 }
 
 .header_slogan {
@@ -117,9 +258,11 @@ body {
     text-decoration: none;
     font-size: 14px;
     color: white;
-    list-style: 23px;
     text-transform: uppercase;
     background-color: #998675;
+    border: none;
+    outline: none;
+    border-radius: 3px;
     padding: 17px 40px;
     margin-bottom: 327px;
 }
@@ -142,35 +285,191 @@ body {
     align-items: center;
 }
 
-.pagination_out_link_active {
+.pagination_link {
     display: block;
     width: 15px;
     height: 15px;
-    border: 2px solid #998675;
-    border-radius: 50%;
-}
-
-.pagination_in_link {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
     background-color: #ffffff;
     opacity: 50%;
-}
-
-.pagination_in_link_active {
-    visibility: hidden;
-}
-
-.pagination_out_link:hover {
-    display: block;
-    width: 15px;
-    height: 15px;
-    border: 2px solid #998675;
+    border: 2px solid transparent;
     border-radius: 50%;
 }
 
-.pagination_out_link:hover .pagination_in_link {
-    visibility: hidden;
+.pagination_link:hover {
+    background-color: transparent;
+    border: 2px solid #998675;
+}
+
+.cards {
+    max-width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    max-width: 270px;
+    max-height: 204px;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-end;
+}
+
+.card_icon {
+    margin-bottom: 21px;
+}
+
+.card_titel {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card_txt {
+    font-family: "Montserrat";
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.card_line {
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: black;
+}
+
+.card:hover {
+    color: #998675;
+}
+
+.card:hover .card_line {
+    background-color: #998675;
+}
+
+.card:hover .card_icon {
+    fill: #998675;
+}
+
+.slider {
+    max-width: 100%;
+    padding: 73px 30px 0 30px;
+    background-color: #fbfaf8;
+    color: black;
+    margin: 0 auto;
+}
+
+.slider_titel {
+    font-size: 30px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 19px;
+}
+
+.slider_txt {
+    max-width: 780px;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 200;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 auto;
+    margin-bottom: 43px;
+}
+
+.slider_img_wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.sliderimgcentr {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 4;
+}
+
+.slider_imgleft {
+    max-width: 100%;
+    height: auto;
+    z-index: 3;
+    position: absolute;
+    right: 38%;
+}
+
+.sliderimgright {
+    max-width: 100%;
+    height: auto;
+    z-index: 3;
+    position: absolute;
+    left: 38%;
+}
+
+.slider_img_hover:hover {
+    z-index: 5;
+}
+
+.purchase {
+    max-width: 100%;
+    background-color: #211b19;
+}
+
+.purchase_wrap {
+    padding: 48px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.purchase_titel {
+    font-size: 28px;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.purchase_titel_gold {
+    color: #c7b299;
+    margin-right: 11px;
+}
+
+.purchase_txt {
+    color: #615855;
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.purchase_btn {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #998675;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 3px;
+    padding: 16px 32px;
+}
+
+.purchase_btn:hover {
+    background-color: #b6a79bc0;
+}
+
+.purchase_btn:active {
+    background-color: transparent;
+    outline: 1px solid #998675;
 }
