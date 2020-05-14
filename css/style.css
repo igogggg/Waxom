@@ -107,6 +107,7 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    margin-right: 200px;
 }
 
 .logo_txt {
@@ -147,7 +148,7 @@ body {
 .nav_list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .nav_link {
@@ -176,27 +177,61 @@ body {
     height: 24px;
     border: none;
     outline: none;
-    background: url(../img/Cart.png) no-repeat center;
-    background-size: contain;
     box-shadow: none;
+    background-color: transparent;
 }
 
-input[type="search"] {
+.cart_svg {
+    fill: white;
+    height: 100%;
+}
+
+.cart:hover .cart_svg {
+    fill: #c7b299;
+}
+
+.search_icon_form {
     width: 24px;
     height: 24px;
-    outline: none;
-    border: none;
-    background: url(../img/icon-search.png) no-repeat center;
-    background-size: contain;
-    cursor: pointer;
+    position: relative;
 }
 
-input[type="search"]:focus {
-    width: 250px;
-    border: 1px solid white;
-    color: white;
-    background-position: right;
-    transition: linear 0.3s;
+.search_icon_form_label {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.search_icon_form_svg {
+    height: 100%;
+    fill: white;
+}
+
+.search_icon_form_label:hover .search_icon_form_svg {
+    fill: #c7b299;
+}
+
+.search_icon_form_input {
+    width: 0;
+    min-height: 0;
+    outline: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 40px;
+    left: -200px;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial;
+    text-transform: capitalize;
+}
+
+.search_icon_form_input:focus {
+    width: 200px;
+    min-height: 30px;
+    transition: 1s ease;
+    border: 2px solid #fff;
 }
 
 .header_slogan {
@@ -311,16 +346,18 @@ input[type="search"]:focus {
 
 .card {
     max-width: 270px;
-    max-height: 204px;
+    height: auto;
     color: black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: flex-end;
+    text-align: center;
 }
 
 .card_icon {
     margin-bottom: 21px;
+    width: 100%;
+    height: 50px;
 }
 
 .card_titel {
@@ -472,4 +509,190 @@ input[type="search"]:focus {
 .purchase_btn:active {
     background-color: transparent;
     outline: 1px solid #998675;
+}
+
+.progects {
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.progects_titel_wrap {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.progects_txt {
+    max-width: 770px;
+    margin: 0 auto;
+    color: black;
+    font-size: 16px;
+    font-family: "Montserrat";
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+
+.progects_titel {
+    width: 100%;
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+    line-height: 36px;
+    margin-bottom: 21px;
+}
+
+.progest_btns {
+    max-width: 609px;
+    max-height: 33px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.progest_btn {
+    width: 120px;
+    color: #8c8c8c;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-family: "Montserrat";
+    font-weight: 200;
+    background-color: transparent;
+    outline: none;
+}
+
+.progest_btn_first {
+    width: 70px;
+}
+
+.progest_btn:hover {
+    color: white;
+    background-color: #998675;
+    border-color: #707070;
+}
+
+.progest_btn:active {
+    opacity: 60%;
+    border-color: transparent;
+}
+
+.progect_card {
+    background-color: #fbfaf8;
+    width: 370px;
+    margin-bottom: 30px;
+}
+
+.progect_card_pic {
+    display: block;
+    width: 100%;
+}
+
+.progect_card:hover .progect_card_pic {
+    filter: brightness(40%);
+}
+
+.progect_card:hover {
+    background-color: #362f2d;
+}
+
+.progest_card_desc {
+    position: relative;
+    padding-left: 28px;
+    padding-top: 28px;
+}
+
+.progest_card_desc::before {
+    content: "";
+    border: 10px solid transparent;
+    border-bottom: 10px solid #fbfaf8;
+    position: absolute;
+    top: -20px;
+    left: 28px;
+}
+
+.progect_titel {
+    font-size: 20px;
+    font-weight: 300;
+    color: #c7b299;
+    margin-bottom: 16px;
+}
+
+.progect_txt {
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 200;
+    color: #d1d1d1;
+    margin-bottom: 26px;
+}
+
+.progect_card:hover .progect_titel {
+    color: white;
+}
+
+.progect_card:hover .progect_txt {
+    color: #c7b299;
+}
+
+.progect_card:hover .progest_card_desc::before {
+    border-bottom: 10px solid #362f2d;
+}
+
+.progect_card_btn {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.progect_card_btns {
+    padding: 0 143px;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    bottom: 200px;
+    left: -5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progect_icon {
+    fill: transparent;
+}
+
+.progect_card:hover .progect_icon {
+    fill: white;
+}
+
+.progect_card_btn:hover .progect_icon {
+    fill: #c7b299;
+}
+
+.progect_btn_bottom {
+    background-color: #998675;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px 45px;
+    line-height: 23px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+.progect_btn_bottom:hover {
+    background-color: #b6a79bc0;
+}
+
+.progect_btn_bottom:active {
+    background-color: transparent;
+    outline: 1px solid #998675;
+    color: #998675;
 }
