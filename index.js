@@ -1,23 +1,25 @@
-document
-    .querySelector(".header_arrow_left")
-    .addEventListener("click", leftSlide);
-document
-    .querySelector(".header_arrow_right")
-    .addEventListener("click", rightSlide);
-let intro = document.querySelector(".intro");
+var prev = document.querySelector(".header_arrow_left");
+var next = document.querySelector(".header_arrow_right");
+var index = 1;
+var lis = document.querySelectorAll(".bgimg");
+var count = lis.length;
 
-function leftSlide() {
-    if (intro.classList.contains("rightimg")) {
-        intro.classList.remove("rightimg");
-    } else {
-        intro.classList.add("leftimg");
+prev.addEventListener("click", function() {
+    lis[index].classList.remove("activimg");
+    index--;
+    if (index < 0) {
+        index = count - 1;
     }
-}
 
-function rightSlide() {
-    if (intro.classList.contains("leftimg")) {
-        intro.classList.remove("leftimg");
-    } else {
-        intro.classList.add("rightimg");
+    lis[index].classList.add("activimg");
+});
+
+next.addEventListener("click", function() {
+    lis[index].classList.remove("activimg");
+    index++;
+    if (index > count - 1) {
+        index = 0;
     }
-}
+
+    lis[index].classList.add("activimg");
+});
